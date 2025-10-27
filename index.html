@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Filomar - Portfolio Juridique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "⚖";
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            border: 5px solid #c5a572;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            animation: fadeInScale 1.2s ease-out;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header .subtitle {
+            font-size: 1.8em;
+            color: #c5a572;
+            font-style: italic;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 15px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(197, 165, 114, 0.3);
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .contact-info a {
+            color: #c5a572;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .cv-download {
+            margin-top: 25px;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
+
+        .cv-download a {
+            display: inline-block;
+            background: #c5a572;
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(197, 165, 114, 0.3);
+        }
+
+        .cv-download a:hover {
+            background: #fff;
+            color: #1a1a2e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(197, 165, 114, 0.5);
+        }
+
+        nav {
+            background: #1a1a2e;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #c5a572;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: all 0.3s;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav a:hover {
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #c5a572;
+            opacity: 0;
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+        section:nth-child(7) { animation-delay: 0.7s; }
+        section:nth-child(8) { animation-delay: 0.8s; }
+
+        h2 {
+            color: #1a1a2e;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c5a572;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .section-icon {
+            color: #c5a572;
+            font-size: 0.9em;
+        }
+
+        .about-text {
+            font-size: 1.15em;
+            color: #444;
+            margin: 25px 0;
+            text-align: justify;
+        }
+
+        .about-text p {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .about-text p:nth-child(1) { animation-delay: 0.2s; }
+        .about-text p:nth-child(2) { animation-delay: 0.4s; }
+        .about-text p:nth-child(3) { animation-delay: 0.6s; }
+
+        .highlight-box {
+            background: #f8f4ef;
+            border-left: 4px solid #c5a572;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: #f8f4ef;
+            padding: 30px;
+            border-radius: 5px;
+            border-top: 4px solid #1a1a2e;
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: zoomIn 0.6s ease-out forwards;
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.2s; }
+        .skill-category:nth-child(2) { animation-delay: 0.4s; }
+        .skill-category:nth-child(3) { animation-delay: 0.6s; }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .skill-category h3 {
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 10px 0;
+            color: #555;
+            font-family: 'Segoe UI', sans-serif;
+            opacity: 0;
+            animation: fadeInRight 0.5s ease-out forwards;
+        }
+
+        .skill-category:nth-child(1) li:nth-child(1) { animation-delay: 0.3s; }
+        .skill-category:nth-child(1) li:nth-child(2) { animation-delay: 0.35s; }
+        .skill-category:nth-child(1) li:nth-child(3) { animation-delay: 0.4s; }
+        .skill-category:nth-child(1) li:nth-child(4) { animation-delay: 0.45s; }
+        .skill-category:nth-child(1) li:nth-child(5) { animation-delay: 0.5s; }
+
+        .skill-category li:before {
+            content: "§ ";
+            color: #c5a572;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .experience-item, .education-item {
+            margin: 35px 0;
+            padding: 30px;
+            background: #f8f4ef;
+            border-radius: 5px;
+            border-left: 5px solid #1a1a2e;
+            opacity: 0;
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .experience-item:nth-child(2) { animation-delay: 0.2s; }
+        .experience-item:nth-child(3) { animation-delay: 0.4s; }
+        .education-item:nth-child(2) { animation-delay: 0.2s; }
+        .education-item:nth-child(3) { animation-delay: 0.4s; }
+
+        .experience-item h3, .education-item h3 {
+            color: #1a1a2e;
+            font-size: 1.6em;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .company, .education-item .school {
+            color: #c5a572;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date, .education-item .date {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .experience-item ul {
+            margin-left: 25px;
+            color: #555;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .experience-item li {
+            margin: 12px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: #f8f4ef;
+            padding: 30px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border-top: 4px solid #c5a572;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.4s; }
+        .project-card:nth-child(3) { animation-delay: 0.6s; }
+        .project-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .project-card h3 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #555;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .languages-section, .interests-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .language-item, .interest-item {
+            background: #f8f4ef;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #c5a572;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .language-item:nth-child(1) { animation-delay: 0.2s; }
+        .language-item:nth-child(2) { animation-delay: 0.4s; }
+        .language-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .interest-item:nth-child(1) { animation-delay: 0.2s; }
+        .interest-item:nth-child(2) { animation-delay: 0.4s; }
+        .interest-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .language-item strong, .interest-item strong {
+            color: #1a1a2e;
+            font-size: 1.2em;
+        }
+
+        .motivations {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .motivations h2 {
+            color: #c5a572;
+            border-bottom: 3px solid #c5a572;
+            justify-content: center;
+        }
+
+        .motivations p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .motivations p:nth-child(2) { animation-delay: 0.3s; }
+        .motivations p:nth-child(3) { animation-delay: 0.5s; }
+        .motivations p:nth-child(4) { animation-delay: 0.7s; }
+        .motivations p:nth-child(5) { animation-delay: 0.9s; }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #c5a572;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 10px;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .btn:hover {
+            background: #1a1a2e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            header h1 {
+                font-size: 2.2em;
+            }
+            
+            header .subtitle {
+                font-size: 1.3em;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+
+            .contact-info a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="photoprofil.jpg.jpg" alt="Nathan Filomar" class="profile-photo">
+        <h1>Nathan FILOMAR</h1>
+        <div class="subtitle">Étudiant en BUT Carrières Juridiques</div>
+        <p>⚖ Recherche de Stage du 13/04/2026 au 06/06/2026 ⚖</p>
+        <p>Droit Public | Administration | Justice</p>
+        <div class="contact-info">
+            <a href="mailto:nathanfilomar@gmail.com">📧 nathanfilomar@gmail.com</a>
+            <a href="tel:+33658109919">📱 06 58 10 99 19</a>
+            <a href="https://www.linkedin.com/in/nathan-filomar-154711338/" target="_blank">💼 LinkedIn</a>
+        </div>
+        <div class="cv-download">
+            <a href="cv.html" target="_blank">📄 Voir mon CV</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">Profil</a>
+        <a href="#education">Formation</a>
+        <a href="#skills">Compétences</a>
+        <a href="#experience">Expérience</a>
+        <a href="#projects">Projets</a>
+        <a href="#languages">Langues</a>
+        <a href="#interests">Centres d'intérêt</a>
+        <a href="#motivation">Motivation</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2><span class="section-icon">👤</span> Profil</h2>
+            <div class="about-text">
+                <p><strong>Étudiant de 19 ans passionné par le droit public et administratif, animé par la volonté de contribuer à l'administration et à la justice.</strong></p>
+                <p>Actuellement en 2ème année de BUT Carrières Juridiques parcours Administration et Justice à l'IUT de Rouen, je recherche un stage du 13 avril au 6 juin 2026 pour développer mes compétences pratiques et approfondir mes connaissances en droit administratif et pénal.</p>
+                <p>Mon parcours atypique, combinant une formation scientifique au lycée (spécialités Mathématiques et Sciences de l'Ingénieur) avec une option Droit et grands enjeux du monde contemporain, m'a permis de développer à la fois rigueur analytique et compréhension des problématiques juridiques actuelles.</p>
+            </div>
+            <div class="highlight-box">
+                "La justice est la première vertu des institutions sociales" - Mon objectif est de contribuer au bon fonctionnement de l'administration publique et des institutions judiciaires.
+            </div>
+        </section>
+
+        <section id="education">
+            <h2><span class="section-icon">🎓</span> Formation Juridique</h2>
+            
+            <div class="education-item">
+                <h3>BUT Carrières Juridiques - 2ème année</h3>
+                <div class="school">IUT de Rouen - Université de Rouen Normandie</div>
+                <div class="date">2024 - En cours</div>
+                <p><strong>Parcours :</strong> Administration et Justice</p>
+                <p><strong>Matières principales :</strong></p>
+                <ul>
+                    <li>Droit administratif et institutions publiques</li>
+                    <li>Droit pénal et procédure pénale</li>
+                    <li>Droit civil (personnes, famille, obligations)</li>
+                    <li>Procédures civiles et modes alternatifs de règlement des litiges</li>
+                    <li>Droit commercial et droit des sociétés</li>
+                    <li>Droit constitutionnel et institutions européennes</li>
+                    <li>Droit du travail et protection sociale</li>
+                    <li>Droit fiscal et finances publiques</li>
+                    <li>Anglais juridique et communication professionnelle</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Baccalauréat Général - Mention Bien</h3>
+                <div class="school">Lycée - Normandie</div>
+                <div class="date">2024</div>
+                <p><strong>Spécialités :</strong> Mathématiques et Sciences de l'Ingénieur</p>
+                <p><strong>Option :</strong> Droit et enjeux du monde contemporain</p>
+                <p>Ce parcours m'a permis d'allier rigueur scientifique et réflexion juridique.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><span class="section-icon">⚖</span> Compétences Juridiques & Transversales</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>📚 Compétences Juridiques</h3>
+                    <ul>
+                        <li>Droit civil, pénal et administratif</li>
+                        <li>Procédures judiciaires et administratives</li>
+                        <li>Analyse et synthèse de textes juridiques</li>
+                        <li>Recherche documentaire (Légifrance, bases juridiques)</li>
+                        <li>Législation et jurisprudence</li>
+                        <li>Anglais juridique</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>💼 Compétences Professionnelles</h3>
+                    <ul>
+                        <li>Rigueur et organisation</li>
+                        <li>Communication orale et écrite</li>
+                        <li>Travail en équipe et gestion du temps</li>
+                        <li>Esprit critique et sens de l'analyse</li>
+                        <li>Argumentation et persuasion</li>
+                        <li>Confidentialité et éthique professionnelle</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ Compétences Techniques</h3>
+                    <ul>
+                        <li>Pack Office (Word, Excel, PowerPoint)</li>
+                        <li>Recherche sur bases de données juridiques</li>
+                        <li>Rédaction d'actes et de synthèses</li>
+                        <li>Veille juridique et documentaire</li>
+                        <li>Analyse de dossiers complexes</li>
+                        <li>Gestion administrative</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2><span class="section-icon">💼</span> Expériences Professionnelles</h2>
+            
+            <div class="experience-item">
+                <h3>Employé Polyvalent</h3>
+                <div class="company">Burger King - Normandie</div>
+                <div class="date">Mars 2024 - Juin 2024 (4 mois)</div>
+                <ul>
+                    <li>Accueil clients et gestion des commandes</li>
+                    <li>Travail en équipe et gestion du stress en période d'affluence</li>
+                    <li>Développement de la rigueur et de la communication</li>
+                    <li>Respect des procédures et des normes d'hygiène</li>
+                    <li>Ponctualité et sens des responsabilités</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Stage de 3ème</h3>
+                <div class="company">Intermarché</div>
+                <div class="date">2020</div>
+                <ul>
+                    <li>Découverte de la gestion et organisation d'un point de vente</li>
+                    <li>Observation du contact client et du travail en équipe</li>
+                    <li>Initiation aux métiers du commerce</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2><span class="section-icon">📋</span> Projets Juridiques</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>📊 SAE - Analyse d'Entreprise</h3>
+                    <p><strong>Situation d'Apprentissage et d'Évaluation</strong> : Étude approfondie d'une entreprise avec analyse de ses forces, faiblesses, opportunités et menaces. Proposition de solutions stratégiques à court, moyen et long terme, incluant des aspects juridiques, économiques et organisationnels.</p>
+                </div>
+                <div class="project-card">
+                    <h3>⚖ Cas Pratiques Juridiques</h3>
+                    <p>Réalisation de nombreux cas pratiques en droit civil, pénal et administratif : analyse de situations contentieuses, rédaction de consultations juridiques, recherche jurisprudentielle et application du droit aux faits.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🔍 Veille Juridique</h3>
+                    <p>Suivi régulier de l'actualité juridique et des évolutions législatives, notamment en droit public et droit pénal. Utilisation quotidienne de bases de données juridiques (Légifrance, Dalloz).</p>
+                </div>
+                <div class="project-card">
+                    <h3>📚 Droit Public & Actualité</h3>
+                    <p>Intérêt marqué pour le droit public, les institutions administratives et l'actualité judiciaire. Participation active aux cours et travaux dirigés.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2><span class="section-icon">🌍</span> Langues</h2>
+            <div class="languages-section">
+                <div class="language-item">
+                    <strong>🇫🇷 Français</strong>
+                    <p>Langue maternelle</p>
+                </div>
+                <div class="language-item">
+                    <strong>🇬🇧 Anglais</strong>
+                    <p>Niveau scolaire - Anglais juridique</p>
+                </div>
+                <div class="language-item">
+                    <strong>🇩🇪 Allemand</strong>
+                    <p>Niveau scolaire</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2><span class="section-icon">⭐</span> Centres d'Intérêt</h2>
+            <div class="interests-section">
+                <div class="interest-item">
+                    <strong>🤾 Handball</strong>
+                    <p>Pratique pendant 10 ans - Développement de l'esprit d'équipe, de la discipline et du dépassement de soi</p>
+                </div>
+                <div class="interest-item">
+                    <strong>⚖ Droit Public & Justice</strong>
+                    <p>Passion pour le droit administratif, les institutions publiques et l'actualité judiciaire</p>
+                </div>
+                <div class="interest-item">
+                    <strong>🏃 Sport & Engagement</strong>
+                    <p>Pratique sportive régulière et engagement dans des activités collectives</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="motivations" id="motivation">
+            <h2>✨ Pourquoi ce stage ?</h2>
+            <p>Je suis à la recherche d'un stage du <strong>13 avril au 6 juin 2026</strong> qui me permettra de découvrir la pratique quotidienne du droit au sein d'une administration, d'un tribunal ou d'un service juridique.</p>
+            <p>Rigoureux, motivé et désireux d'apprendre, je souhaite mettre mes compétences au service de votre structure et contribuer activement à vos missions juridiques et administratives.</p>
+            <p>Mon parcours scientifique antérieur m'a doté d'une capacité d'analyse et d'une rigueur méthodologique qui sont des atouts précieux pour le travail juridique.</p>
+            <p><strong>Objectif :</strong> Développer mes compétences pratiques en droit administratif et pénal, et approfondir ma connaissance des institutions publiques et judiciaires.</p>
+        </section>
+
+        <section style="text-align: center;">
+            <h2><span class="section-icon">📞</span> Me Contacter</h2>
+            <p style="font-size: 1.15em;">Je suis disponible pour un entretien afin de discuter de ma candidature et de mes motivations.</p>
+            <a href="cv.html" target="_blank" class="btn">📄 Voir mon CV</a>
+            <a href="mailto:nathanfilomar@gmail.com" class="btn">📧 M'envoyer un Email</a>
+            <a href="https://www.linkedin.com/in/nathan-filomar-154711338/" target="_blank" class="btn">💼 Mon LinkedIn</a>
+            <a href="tel:+33658109919" class="btn">📱 Appeler</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>⚖ <strong>Nathan FILOMAR</strong> - Étudiant en BUT Carrières Juridiques ⚖</p>
+        <p>Recherche de stage : 13 avril - 6 juin 2026</p>
+        <p>📧 nathanfilomar@gmail.com | 📱 06 58 10 99 19</p>
+        <p>📍 Rouen, Normandie</p>
+        <p>&copy; 2025 - Portfolio créé dans le cadre de ma recherche de stage</p>
+    </footer>
+</body>
+</html>

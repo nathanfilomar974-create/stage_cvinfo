@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nathan Filomar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .objective {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .objective p {
+            line-height: 1.6;
+            color: #1e40af;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #1e3a8a;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 2px solid #e5e7eb;
+            position: relative;
+        }
+        
+        .experience-item::before, .education-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            color: #1e3a8a;
+            font-size: 1.1em;
+        }
+        
+        .item-date {
+            color: #6b7280;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .item-subtitle {
+            color: #3b82f6;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .item-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .item-list li {
+            padding-left: 20px;
+            margin-bottom: 6px;
+            position: relative;
+            line-height: 1.5;
+            color: #374151;
+        }
+        
+        .item-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .skill-category h4 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-category li {
+            padding: 5px 0;
+            color: #4b5563;
+            font-size: 0.9em;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background: #f9fafb;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .language-item strong {
+            color: #1e3a8a;
+        }
+        
+        .interests {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .interest-tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #bfdbfe;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NATHAN FILOMAR</h1>
+            <div class="contact-info">
+                <div class="contact-item">📍 Rouen</div>
+                <div class="contact-item">📱 06 58 10 99 19</div>
+                <div class="contact-item">✉️ nathanfilomar@gmail.com</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="objective">
+                <p><strong>Étudiant en BUT Carrières Juridiques</strong> recherche un stage du <strong>13/04/2026 au 06/06/2026</strong> dans le domaine du droit public, de l'administration ou de la justice. Motivé pour développer mes compétences pratiques et approfondir mes connaissances en droit administratif et pénal au sein d'une structure dynamique.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">🎓 Formation</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">BUT Carrières Juridiques</span>
+                        <span class="item-date">2024 – en cours</span>
+                    </div>
+                    <div class="item-subtitle">Parcours Administration et Justice – IUT de Rouen</div>
+                    <ul class="item-list">
+                        <li>Droit administratif, institutions publiques et droit constitutionnel</li>
+                        <li>Droit pénal et procédure pénale</li>
+                        <li>Droit civil (personnes, famille, obligations) et procédures civiles</li>
+                        <li>Droit commercial, droit des sociétés et droit du travail</li>
+                        <li>Droit fiscal, finances publiques et institutions européennes</li>
+                        <li>Anglais juridique et communication professionnelle</li>
+                    </ul>
+                </div>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Baccalauréat Général</span>
+                        <span class="item-date">2024</span>
+                    </div>
+                    <div class="item-subtitle">Spécialités Sciences de l'ingénieur & Mathématiques</div>
+                    <ul class="item-list">
+                        <li>Option Droit et enjeux contemporains</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">💼 Expériences Professionnelles</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Employé Polyvalent</span>
+                        <span class="item-date">2024</span>
+                    </div>
+                    <div class="item-subtitle">Burger King</div>
+                    <ul class="item-list">
+                        <li>Accueil client et gestion des commandes en période d'affluence</li>
+                        <li>Travail en équipe dans un environnement exigeant</li>
+                        <li>Développement de la rigueur, de la réactivité et de la communication</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Stage d'Observation</span>
+                        <span class="item-date">2020</span>
+                    </div>
+                    <div class="item-subtitle">Intermarché</div>
+                    <ul class="item-list">
+                        <li>Découverte de la gestion et organisation d'un point de vente</li>
+                        <li>Observation du contact client et du travail en équipe</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">⚖️ Compétences Juridiques</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Domaines de droit</h4>
+                        <ul>
+                            <li>Droit administratif</li>
+                            <li>Droit pénal</li>
+                            <li>Droit civil</li>
+                            <li>Droit constitutionnel</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Procédures</h4>
+                        <ul>
+                            <li>Procédures judiciaires</li>
+                            <li>Procédures administratives</li>
+                            <li>Modes alternatifs de règlement des litiges</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Méthodologie</h4>
+                        <ul>
+                            <li>Analyse juridique</li>
+                            <li>Synthèse de textes</li>
+                            <li>Recherche documentaire</li>
+                            <li>Bases de données juridiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">🔧 Compétences Transversales</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Organisation</h4>
+                        <ul>
+                            <li>Rigueur et méthode</li>
+                            <li>Gestion du temps</li>
+                            <li>Esprit d'analyse</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Communication</h4>
+                        <ul>
+                            <li>Expression orale et écrite</li>
+                            <li>Argumentation</li>
+                            <li>Travail en équipe</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Outils</h4>
+                        <ul>
+                            <li>Pack Office</li>
+                            <li>Word, Excel, PowerPoint</li>
+                            <li>Recherche documentaire</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">🌍 Langues</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <strong>Français :</strong> Langue maternelle
+                    </div>
+                    <div class="language-item">
+                        <strong>Anglais :</strong> Niveau scolaire (juridique)
+                    </div>
+                    <div class="language-item">
+                        <strong>Allemand :</strong> Niveau scolaire
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">⚡ Centres d'Intérêt</h2>
+                <div class="interests">
+                    <div class="interest-tag">🤾 Handball (10 ans de pratique)</div>
+                    <div class="interest-tag">⚖️ Droit public et actualité judiciaire</div>
+                    <div class="interest-tag">🏃 Sport et engagement collectif</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
