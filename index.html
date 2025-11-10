@@ -70,6 +70,24 @@
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
+        .alternance-badge {
+            display: inline-block;
+            background: #c5a572;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 15px;
+            animation: pulse 2s ease-in-out infinite;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
         .contact-info {
             margin-top: 30px;
             padding-top: 20px;
@@ -194,6 +212,7 @@
         .about-text p {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
+            margin-bottom: 15px;
         }
 
         .about-text p:nth-child(1) { animation-delay: 0.2s; }
@@ -207,6 +226,40 @@
             margin: 25px 0;
             font-style: italic;
             animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .alternance-info {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+            margin: 25px 0;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+
+        .alternance-info h3 {
+            color: #c5a572;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .alternance-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .alternance-info li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .alternance-info li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #c5a572;
+            font-weight: bold;
         }
 
         .skills-grid {
@@ -568,11 +621,11 @@
 </head>
 <body>
     <header>
-        <img src="photoprofil.jpg.jpg" alt="Nathan Filomar" class="profile-photo">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDMSFQDbZ_Hw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729519682408?e=1735776000&v=beta&t=zHFQz1pX4xc8p0zzKMYPR4Fm4dPF5z0qvyZTdlU_Z04" alt="Nathan Filomar" class="profile-photo">
         <h1>Nathan FILOMAR</h1>
         <div class="subtitle">Étudiant en BUT Carrières Juridiques</div>
-        <p>⚖ Recherche de Stage du 13/04/2026 au 06/06/2026 ⚖</p>
-        <p>Droit Public | Administration | Justice</p>
+        <div class="alternance-badge">🎓 Recherche Alternance - Rentrée 2026</div>
+        <p>⚖ Droit Public | Administration | Justice ⚖</p>
         <div class="contact-info">
             <a href="mailto:nathanfilomar@gmail.com">📧 nathanfilomar@gmail.com</a>
             <a href="tel:+33658109919">📱 06 58 10 99 19</a>
@@ -585,6 +638,7 @@
 
     <nav>
         <a href="#about">Profil</a>
+        <a href="#alternance">Alternance</a>
         <a href="#education">Formation</a>
         <a href="#skills">Compétences</a>
         <a href="#experience">Expérience</a>
@@ -599,11 +653,29 @@
             <h2><span class="section-icon">👤</span> Profil</h2>
             <div class="about-text">
                 <p><strong>Étudiant de 19 ans passionné par le droit public et administratif, animé par la volonté de contribuer à l'administration et à la justice.</strong></p>
-                <p>Actuellement en 2ème année de BUT Carrières Juridiques parcours Administration et Justice à l'IUT de Rouen, je recherche un stage du 13 avril au 6 juin 2026 pour développer mes compétences pratiques et approfondir mes connaissances en droit administratif et pénal.</p>
+                <p>Actuellement en 2ème année de BUT Carrières Juridiques parcours Administration et Justice à l'IUT de Rouen, je recherche une alternance pour la rentrée 2026 (3ème année) afin d'allier formation théorique et expérience professionnelle concrète.</p>
                 <p>Mon parcours atypique, combinant une formation scientifique au lycée (spécialités Mathématiques et Sciences de l'Ingénieur) avec une option Droit et grands enjeux du monde contemporain, m'a permis de développer à la fois rigueur analytique et compréhension des problématiques juridiques actuelles.</p>
             </div>
             <div class="highlight-box">
-                "La justice est la première vertu des institutions sociales" - Mon objectif est de contribuer au bon fonctionnement de l'administration publique et des institutions judiciaires.
+                "La justice est la première vertu des institutions sociales" - Mon objectif est de contribuer au bon fonctionnement de l'administration publique et des institutions judiciaires à travers une alternance enrichissante.
+            </div>
+        </section>
+
+        <section id="alternance">
+            <h2><span class="section-icon">🎓</span> Recherche d'Alternance</h2>
+            <div class="alternance-info">
+                <h3>📅 À partir de Septembre 2026 - 3ème année de BUT</h3>
+                <ul>
+                    <li><strong>Rythme :</strong> 1 semaine en entreprise / 1 semaine à l'IUT (alternance hebdomadaire)</li>
+                    <li><strong>Durée :</strong> 1 an (année universitaire 2026-2027)</li>
+                    <li><strong>Domaines recherchés :</strong> Service juridique, administration publique, cabinets d'avocats, tribunaux</li>
+                    <li><strong>Localisation :</strong> Rouen et région Normandie (mobilité possible)</li>
+                </ul>
+            </div>
+            <div class="about-text">
+                <p><strong>Pourquoi choisir l'alternance ?</strong></p>
+                <p>L'alternance me permettra d'acquérir une expérience professionnelle significative tout en poursuivant mes études. Je souhaite mettre en pratique mes connaissances juridiques au sein d'une structure dynamique et contribuer activement à vos missions.</p>
+                <p>Rigoureux, motivé et désireux d'apprendre, je m'investis pleinement dans les projets qui me sont confiés. Mon parcours scientifique m'a doté d'une capacité d'analyse et d'une méthodologie de travail qui seront des atouts pour votre équipe.</p>
             </div>
         </section>
 
@@ -615,6 +687,7 @@
                 <div class="school">IUT de Rouen - Université de Rouen Normandie</div>
                 <div class="date">2024 - En cours</div>
                 <p><strong>Parcours :</strong> Administration et Justice</p>
+                <p><strong>3ème année en alternance prévue pour 2026-2027</strong></p>
                 <p><strong>Matières principales :</strong></p>
                 <ul>
                     <li>Droit administratif et institutions publiques</li>
@@ -686,8 +759,8 @@
                 <div class="company">Burger King - Normandie</div>
                 <div class="date">Mars 2024 - Juin 2024 (4 mois)</div>
                 <ul>
-                    <li>Accueil clients et gestion des commandes</li>
-                    <li>Travail en équipe et gestion du stress en période d'affluence</li>
+                    <li>Accueil clients et gestion des commandes en période d'affluence</li>
+                    <li>Travail en équipe et gestion du stress en environnement dynamique</li>
                     <li>Développement de la rigueur et de la communication</li>
                     <li>Respect des procédures et des normes d'hygiène</li>
                     <li>Ponctualité et sens des responsabilités</li>
@@ -701,93 +774,4 @@
                 <ul>
                     <li>Découverte de la gestion et organisation d'un point de vente</li>
                     <li>Observation du contact client et du travail en équipe</li>
-                    <li>Initiation aux métiers du commerce</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2><span class="section-icon">📋</span> Projets Juridiques</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>📊 SAE - Analyse d'Entreprise</h3>
-                    <p><strong>Situation d'Apprentissage et d'Évaluation</strong> : Étude approfondie d'une entreprise avec analyse de ses forces, faiblesses, opportunités et menaces. Proposition de solutions stratégiques à court, moyen et long terme, incluant des aspects juridiques, économiques et organisationnels.</p>
-                </div>
-                <div class="project-card">
-                    <h3>⚖ Cas Pratiques Juridiques</h3>
-                    <p>Réalisation de nombreux cas pratiques en droit civil, pénal et administratif : analyse de situations contentieuses, rédaction de consultations juridiques, recherche jurisprudentielle et application du droit aux faits.</p>
-                </div>
-                <div class="project-card">
-                    <h3>🔍 Veille Juridique</h3>
-                    <p>Suivi régulier de l'actualité juridique et des évolutions législatives, notamment en droit public et droit pénal. Utilisation quotidienne de bases de données juridiques (Légifrance, Dalloz).</p>
-                </div>
-                <div class="project-card">
-                    <h3>📚 Droit Public & Actualité</h3>
-                    <p>Intérêt marqué pour le droit public, les institutions administratives et l'actualité judiciaire. Participation active aux cours et travaux dirigés.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="languages">
-            <h2><span class="section-icon">🌍</span> Langues</h2>
-            <div class="languages-section">
-                <div class="language-item">
-                    <strong>🇫🇷 Français</strong>
-                    <p>Langue maternelle</p>
-                </div>
-                <div class="language-item">
-                    <strong>🇬🇧 Anglais</strong>
-                    <p>Niveau scolaire - Anglais juridique</p>
-                </div>
-                <div class="language-item">
-                    <strong>🇩🇪 Allemand</strong>
-                    <p>Niveau scolaire</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="interests">
-            <h2><span class="section-icon">⭐</span> Centres d'Intérêt</h2>
-            <div class="interests-section">
-                <div class="interest-item">
-                    <strong>🤾 Handball</strong>
-                    <p>Pratique pendant 10 ans - Développement de l'esprit d'équipe, de la discipline et du dépassement de soi</p>
-                </div>
-                <div class="interest-item">
-                    <strong>⚖ Droit Public & Justice</strong>
-                    <p>Passion pour le droit administratif, les institutions publiques et l'actualité judiciaire</p>
-                </div>
-                <div class="interest-item">
-                    <strong>🏃 Sport & Engagement</strong>
-                    <p>Pratique sportive régulière et engagement dans des activités collectives</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="motivations" id="motivation">
-            <h2>✨ Pourquoi ce stage ?</h2>
-            <p>Je suis à la recherche d'un stage du <strong>13 avril au 6 juin 2026</strong> qui me permettra de découvrir la pratique quotidienne du droit au sein d'une administration, d'un tribunal ou d'un service juridique.</p>
-            <p>Rigoureux, motivé et désireux d'apprendre, je souhaite mettre mes compétences au service de votre structure et contribuer activement à vos missions juridiques et administratives.</p>
-            <p>Mon parcours scientifique antérieur m'a doté d'une capacité d'analyse et d'une rigueur méthodologique qui sont des atouts précieux pour le travail juridique.</p>
-            <p><strong>Objectif :</strong> Développer mes compétences pratiques en droit administratif et pénal, et approfondir ma connaissance des institutions publiques et judiciaires.</p>
-        </section>
-
-        <section style="text-align: center;">
-            <h2><span class="section-icon">📞</span> Me Contacter</h2>
-            <p style="font-size: 1.15em;">Je suis disponible pour un entretien afin de discuter de ma candidature et de mes motivations.</p>
-            <a href="cv.html" target="_blank" class="btn">📄 Voir mon CV</a>
-            <a href="mailto:nathanfilomar@gmail.com" class="btn">📧 M'envoyer un Email</a>
-            <a href="https://www.linkedin.com/in/nathan-filomar-154711338/" target="_blank" class="btn">💼 Mon LinkedIn</a>
-            <a href="tel:+33658109919" class="btn">📱 Appeler</a>
-        </section>
-    </div>
-
-    <footer>
-        <p>⚖ <strong>Nathan FILOMAR</strong> - Étudiant en BUT Carrières Juridiques ⚖</p>
-        <p>Recherche de stage : 13 avril - 6 juin 2026</p>
-        <p>📧 nathanfilomar@gmail.com | 📱 06 58 10 99 19</p>
-        <p>📍 Rouen, Normandie</p>
-        <p>&copy; 2025 - Portfolio créé dans le cadre de ma recherche de stage</p>
-    </footer>
-</body>
-</html>
+                    <li
